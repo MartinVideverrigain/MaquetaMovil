@@ -38,6 +38,11 @@ export default {
         backgroundColor: userContainerBackgroundColor,
         borderBottomColor: userContainerBorderColor
     },
+    imageUserContainer:{
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginTop: 40,
+    },
     imageUser: {
         width: 70,
         height: 70,

@@ -8,20 +8,22 @@ import { iconItemMenuColor } from '../Styles/colorsStyle';
 
 import homeScreen from '../Screen/homeScreen';
 import secondScreen from '../Screen/secondScreen';
+import singInScreen from '../Screen/singInScreen';
+import cameraScreen from '../Screen/cameraScreen';
 
 import styles from '../Styles/drawerStyles';
 
 function DrawerMenu(props) {
     return (
         <TouchableOpacity onPress={props.navigation}>
-            <view style={styles.itemMenu}>
-                <view style={styles.iconItemMenu}>
+            <View style={styles.itemMenu}>
+                <View style={styles.iconItemMenu}>
                     <FontAwesome size={22} name={props.iconName} color={iconItemMenuColor} />
-                </view>
-                <view style={styles.titleItemMenu}>
+                </View>
+                <View style={styles.titleItemMenu}>
                     <Text style={styles.titleTextItemMenu}>{props.titleName}</Text>
-                </view>
-            </view>
+                </View>
+            </View>
         </TouchableOpacity>
     );
 }
@@ -36,9 +38,11 @@ function Menu(props) {
                 <View style={styles.nameUserContainer}>
                     <Text style={styles.userName}>{'nombreusuario'}</Text>
                 </View>
-                <DrawerMenu iconName='home' titleName='Inicio' navigation={() => props.navigation.navigate('Home')} />
-                <DrawerMenu iconName='list-alt' titleName='Segunda' navigation={() => props.navigation.navigate('Second')} />
             </View>
+            <DrawerMenu iconName='home' titleName='Inicio' navigation={() => props.navigation.navigate('Home')} />
+            <DrawerMenu iconName='list-alt' titleName='Segunda' navigation={() => props.navigation.navigate('Second')} />
+            <DrawerMenu iconName='sign-in' titleName='SignInScreen' navigation={()=> props.navigation.navigate('SignInScreen')} />
+            <DrawerMenu iconName='camera' titleName='Camera' navigation={()=> props.navigation.navigate('CameraScreen')} />
         </View>
     );
 }
@@ -46,12 +50,15 @@ function Menu(props) {
 const Drawer = createDrawerNavigator();
 
 function MyDrawer() {
+    return(
     <NavigationContainer ref={navigationRef}>
         <Drawer.Navigator drawerContent={(props) => <Menu {...props} />}>
             <Drawer.Screen name="Home" component={homeScreen} />
             <Drawer.Screen name="Second" component={secondScreen} />
+            <Drawer.Screen name="SignInScreen" component={singInScreen} />
+            <Drawer.Screen name="CameraScreen" component={cameraScreen} />
         </Drawer.Navigator>
-    </NavigationContainer>
+    </NavigationContainer>);
 }
 
 export default MyDrawer;

@@ -1,5 +1,5 @@
-export const iconItemMenuColor = '#6195ED';
-export const titleItemMenuColor = 'white';
-export const userContainerBackgroundColor = 'black';
+export const iconItemMenuColor = 'green';
+export const titleItemMenuColor = 'red';
+export const userContainerBackgroundColor = 'withe';
 export const userContainerBorderColor = 'green';
-export const userNameColor = 'white';
+export const userNameColor = 'blue';
