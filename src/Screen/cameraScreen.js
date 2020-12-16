@@ -9,7 +9,7 @@ export default function cameraScreen() {
   const [type, setType] = useState(Camera.Constants.Type.back);
   const [capturedPhoto, setCapturedPhoto] = useState(null);
   const [open, setOpen] = useState(false);
-
+ 
 
   useEffect(() => {
     (async () => {
